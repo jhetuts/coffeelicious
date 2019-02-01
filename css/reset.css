@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul, ol, li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a,
+a:visited,
+a:link,
+a:active{
+    color: unset;
+    text-decoration: none;
+}
