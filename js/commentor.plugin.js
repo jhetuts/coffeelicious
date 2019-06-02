@@ -66,15 +66,17 @@
           }
 
           if (change.type === "modified") {
-            console.log('modified')
+            console.log(data)
             if ($('body').find("#".concat(data._uid))) {
               $("#".concat(data._uid)).remove();
             }
             if (data.isApproved !== "undefined" && data.isApproved) {
+				console.log(data.isApproved)
               $("#".concat(data._uid)).empty();
               $("#".concat(data._uid)).append(commentApproved);
               $("#".concat(data._uid)).css('opacity', '1');
             } else {
+				console.log(data.isApproved)
               $("#".concat(data._uid)).empty();
               $("#".concat(data._uid)).append(commentPendingForApproval);
               $("#".concat(data._uid)).css('opacity', '0.5');
