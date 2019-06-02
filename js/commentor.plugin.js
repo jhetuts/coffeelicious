@@ -56,6 +56,8 @@
           $("#".concat(commentDetails.postId)).find('.commentator-area').after(commentContainer);
 
           if (change.type === "added") {
+            console.log('added')
+            console.log(data);
             if (data.isApproved !== "undefined" && data.isApproved) {
               $("#".concat(data._uid)).append(commentApproved);
               $("#".concat(data._uid)).css('opacity', '1');
@@ -71,12 +73,13 @@
               $("#".concat(data._uid)).remove();
             }
             if (data.isApproved !== "undefined" && data.isApproved) {
-				console.log(data.isApproved)
+				      console.log(data.isApproved)
               $("#".concat(data._uid)).empty();
               $("#".concat(data._uid)).append(commentApproved);
               $("#".concat(data._uid)).css('opacity', '1');
+              $("#".concat(data._uid)).css('margin-bottom', '20px');
             } else {
-				console.log(data.isApproved)
+				      console.log(data.isApproved)
               $("#".concat(data._uid)).empty();
               $("#".concat(data._uid)).append(commentPendingForApproval);
               $("#".concat(data._uid)).css('opacity', '0.5');
@@ -87,7 +90,9 @@
             $("#".concat(data._uid)).remove();
           }
 
-          $('.user-commentator-box:empty').remove();
+          if($('.user-commentator-box:empty')){
+            $('.user-commentator-box:empty').css('margin-bottom', '0');
+          }
         });
       }
     });
